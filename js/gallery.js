@@ -108,7 +108,7 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 $(document).ready( function() {
   if(
 	retJSON();
-	$('.details').eq(0).hide();
+	// $('.details').eq(0).hide();
 });
 
 window.addEventListener('load', function() {
@@ -116,7 +116,7 @@ window.addEventListener('load', function() {
 console.log('window loaded');
 }, false);
 
-ffunction iterateJSON() {
+function iterateJSON() {
   for(x = 0; x < mJson.images.length; x++)
   {
     mImages[x] = new GalleryImage();
