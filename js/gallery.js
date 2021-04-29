@@ -25,7 +25,7 @@ function animate() {
 		mLastFrameTime = currentTime;
 	}
 
-	if if ((currentTime - mLastFrameTime) > mWaitTime)  {
+	if((currentTime - mLastFrameTime) > mWaitTime)  {
 		swapPhoto();
 		mLastFrameTime = currentTime;
 	}
@@ -108,7 +108,7 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 $(document).ready( function() {
   if(
 	retJSON();
-	// $('.details').eq(0).hide();
+	$('.details').eq(0).hide();
 });
 
 window.addEventListener('load', function() {
