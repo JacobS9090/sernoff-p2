@@ -17,7 +17,6 @@ animate();
 
 var mLastFrameTime = 0;
 var mWaitTime = 5000; //time in ms
-
 function animate() {
     requestAnimFrame( animate );
 	var currentTime = new Date().getTime();
@@ -25,7 +24,7 @@ function animate() {
 		mLastFrameTime = currentTime;
 	}
 
-	if((currentTime - mLastFrameTime) > mWaitTime)  {
+	if ((currentTime - mLastFrameTime) > mWaitTime) {
 		swapPhoto();
 		mLastFrameTime = currentTime;
 	}
@@ -61,39 +60,31 @@ function swapPhoto() {
 }
 
 // Counter for the mImages array
-var mCurrentIndex = 0
-
-var mJson;
-
-var mUrl = 'images.json';
+var mCurrentIndex = 0;
 
 // XMLHttpRequest variable
 var mRequest = new XMLHttpRequest();
-function retJson(){
-
-  mRequest.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-          mJson = JSON.parse(mRequest.responseText);
-          iterateJSON();
-      }
-  };
-  mRequest.open("GET", "images.json", true);
-  mRequest.send();
-}
 
 // Array holding GalleryImage objects (see below).
 var mImages = [];
 
 // Holds the retrived JSON information
-
-
-
-
-
+var mJson;
 
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
+var mUrl = 'images.json';
 
+function fetchJSON() {
+  mRequest.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+         mJson = JSON.parse(mRequest.responseText);
+         iterateJSON();
+      }
+  };
+  mRequest.open("GET", mUrl, true);
+  mRequest.send();
+}
 
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
@@ -106,14 +97,16 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 }
 
 $(document).ready( function() {
-  if(
-	retJSON();
-	$('.details').eq(0).hide();
+  fetchJSON();
+	// This initially hides the photos' metadata information
+	// $('.details').eq(0).hide();
+
 });
 
 window.addEventListener('load', function() {
 
-console.log('window loaded');
+	console.log('window loaded');
+
 }, false);
 
 function iterateJSON() {
