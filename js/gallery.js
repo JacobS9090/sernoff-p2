@@ -31,12 +31,6 @@ function animate() {
 }
 
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
-function rotate(){
-if ($(".moreIndicator").hasClass("rot90")){
-  removeClass("rot90").addClass("rot180");
-}else{
-$(".moreIndicator").hasClass("rot270").removeClass("rot180").addClass("rot90");
-}
 
 function swapPhoto() {
 
