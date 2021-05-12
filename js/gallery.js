@@ -144,14 +144,15 @@ function rotate(){
     }
 }
 
+$(document).ready(function(){
+    $("#nextPhoto").click(function(){
+        swapPhoto();
+    });
+});
 
-
-
-function nextPhoto() {
-    mCurrentIndex += 1;
-    swapPhoto();
-}
-function prevPhoto() {
-    mCurrentIndex -= 1;
-    swapPhoto();
-}
+$(document).ready(function(){
+    $("#prevPhoto").click(function(){
+        mCurrentIndex -= 2;
+        swapPhoto();
+    });
+});
