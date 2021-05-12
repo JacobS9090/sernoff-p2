@@ -96,6 +96,11 @@ return function(e) {
 }
 
 $(document).ready( function() {
+  $("#nextPhoto").position({
+    my: "right bottom",
+    at: "right bottom",
+    of: "#nav"
+  });
 fetchJSON();
 // This initially hides the photos' metadata information
 // $('.details').eq(0).hide();
@@ -140,11 +145,7 @@ function rotate(){
 }
 
 
-$("#nextPhoto").position({
-  my: "right bottom",
-  at: "right bottom",
-  of: "#nav"
-});
+
 
 function nextPhoto() {
     mCurrentIndex += 1;
