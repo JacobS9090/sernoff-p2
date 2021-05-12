@@ -77,6 +77,30 @@
             "imgLocation": "Turkey",
             "description": "Istanbul",
             "date": "01/13/2016"
-        }
+        },
+        {
+            "imgPath": "img/places/tonopah.jpg",
+            "imgLocation": "Nevada",
+            "description": "Tonopah",
+            "date": "10/13/1999"
+        },
+        {
+            "imgPath": "img/places/mushroom-biome.jpg",
+            "imgLocation": "Mushroom Biome",
+            "description": "What-the-what",
+            "date": "08/13/2011"
+        },
+        {
+            "imgPath": "img/places/vietnam.jpg",
+            "imgLocation": "Danang",
+            "description": "Vietnam",
+            "date": "03/16/2003"
+        },
+        {
+            "imgPath": "img/places/san-fran.jpg",
+            "imgLocation": "California",
+            "description": "San Francisco",
+            "date": "01/09/2014"
+        },
   ]
 }
