@@ -156,3 +156,14 @@ $(document).ready(function(){
         swapPhoto();
     });
 });
+$(document).ready(function(){
+    $("#prevPhoto").click(function(){
+        mCurrentIndex -= 2;
+        swapPhoto();
+    });
+});
+$(document).ready(function(){
+  if(mURL==undefined){
+    mURL=images.json
+  }
+fetchJSON();
