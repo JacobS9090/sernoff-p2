@@ -102,8 +102,7 @@ $(document).ready( function() {
     of: "#nav"
   });
 fetchJSON();
-// This initially hides the photos' metadata information
-// $('.details').eq(0).hide();
+
 
 });
 
@@ -160,5 +159,17 @@ $(document).ready(function(){
 $(document).ready(function(){
   if(mURL==undefined){
     mURL=images.json
-  });
+  }
 fetchJSON();
+}
+$(document).ready( function() {
+    const json = new URLSearchParams(location.search);
+    for (const value of json.values()) {
+        console.log(value);
+        mUrl = json;
+        if (mUrl === undefined) {
+            mUrl = images.json;
+        };
+    }
+    request();
+});
