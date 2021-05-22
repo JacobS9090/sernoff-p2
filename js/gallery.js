@@ -41,7 +41,7 @@ if(mCurrentIndex >= mImages.length)
 if(mCurrentIndex < 0) {
  mCurrentIndex = mImages.length-1;
 }
-
+// Swaps the photos around for slideshow
 document.getElementById('photo').src = mImages[mCurrentIndex].img;
 
 var location = document.getElementsByClassName('location')[0];
@@ -57,7 +57,7 @@ mLastFrameTime = 0;
 mCurrentIndex += 1;
 console.log('swap photo');
 }
-
+// Links the data from JSON associated with each image
 // Counter for the mImages array
 var mCurrentIndex = 0;
 
@@ -122,13 +122,14 @@ for(x = 0; x < mJson.images.length; x++)
  mImages[x].img = mJson.images[x].imgPath;
 }
 }
-
+// Part of the slide show//
 function GalleryImage() {
 var location;
 var description;
 var date;
 var img;
 }
+// Associates details in JSON file with description parts//
 var 90 = getElementsByClassName("rot90").slideToggle();
 var 180 = getElementsByClassName("rot180").slideToggle();
 var 270 = getElementsByClassName("rot270").slideToggle();
@@ -142,31 +143,32 @@ function rotate(){
         $(".details").slideToggle( "slow" );
     }
 }
-
+// Rotates bottom button if picture is too big//
 $(document).ready(function(){
     $("#nextPhoto").click(function(){
         swapPhoto();
     });
 });
-
+// Swaps out the next photo when right image clicked//
 $(document).ready(function(){
     $("#prevPhoto").click(function(){
         mCurrentIndex -= 2;
         swapPhoto();
     });
 });
-
+// Swaps out the next photo when right image clicked//
 $(document).ready(function(){
   if(mURL==undefined){
     mURL=images.json
   }
 fetchJSON();
 }
+// Associate JSON file with web images//
 $(document).ready( function() {
     const json = new URLSearchParams(location.search);
     for (const value of json.values()) {
         console.log(value);
-        mUrl = json;
+        mUrl = extra.json;
         if (mUrl === undefined) {
             mUrl = images.json;
         };
