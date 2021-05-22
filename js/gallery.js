@@ -169,7 +169,6 @@ $(document).ready( function() {
     for (const value of json.values()) {
         console.log(value);
         mUrl = extra.json;
-        };
-    }
+        }
     request();
 });
