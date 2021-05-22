@@ -132,15 +132,36 @@ var img;
 // Associates details in JSON file with description parts//
 
 
+var 90 = getElementsByClassName("rot90").slideToggle();
+var 180 = getElementsByClassName("rot180").slideToggle();
+var 270 = getElementsByClassName("rot270").slideToggle();
+
 function rotate(){
     if ($(".moreIndicator").hasClass("rot90")) {
         $(".moreIndicator").removeClass("rot90").addClass("rot270");
-        $(".details").slideToggle( "slow" );
     } else {
         $(".moreIndicator").removeClass("rot270").addClass("rot90");
-        $(".details").slideToggle( "slow" );
     }
 }
+
+
+$("#nextPhoto").position({
+  my: "right bottom",
+  at: "right bottom",
+  of: "#nav"
+});
+function rotate(){
+    if ($(".moreIndicator").hasClass("rot90")) {
+        $(".moreIndicator").removeClass("rot90").addClass("rot270");
+    } else {
+        $(".moreIndicator").removeClass("rot270").addClass("rot90");
+    }
+}
+$("#nextPhoto").position({
+  my: "right bottom",
+  at: "right bottom",
+  of: "#nav"
+});
 // Rotates bottom button if picture is too big//
 $(document).ready(function(){
     $("#nextPhoto").click(function(){
