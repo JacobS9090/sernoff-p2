@@ -100,12 +100,17 @@ function rotate()
 }
 
 //Click functions for nav buttons
-   $("#nextPhoto").onclick(function(){
+   $("#nextPhoto").click(function(){
         swapPhoto();
     });
-	$("#nextPhoto").onclick(function() {
+	$("#nextPhoto").click(function() {
 		swapPhoto();
 	});
+	$("#prevPhoto").click(function(){
+		mCurrentIndex -= 2;
+		swapPhoto();
+	});
+
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
 //@param A GalleryImage object. Use this method for an event handler for loading a gallery Image object (optional).
