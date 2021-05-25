@@ -141,7 +141,7 @@ function rotate(){
 }
 
 
-$("#nextPhoto").position(){
+$("#nextPhoto").position({
   my: "right bottom",
   at: "right bottom",
   of: "#nav"
