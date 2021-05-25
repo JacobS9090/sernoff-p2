@@ -132,10 +132,6 @@ var img;
 // Associates details in JSON file with description parts//
 
 
-var 90 = getElementsByClassName("rot90").slideToggle();
-var 180 = getElementsByClassName("rot180").slideToggle();
-var 270 = getElementsByClassName("rot270").slideToggle();
-
 function rotate(){
     if ($(".moreIndicator").hasClass("rot90")) {
         $(".moreIndicator").removeClass("rot90").addClass("rot270");
