@@ -177,7 +177,7 @@ $(document).ready(function(){
     mURL=images.json
   }
 fetchJSON();
-}
+});
 // Associate JSON file with web images//
 $(document).ready( function() {
     const json = new URLSearchParams(location.search);
