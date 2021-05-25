@@ -80,9 +80,9 @@ mRequest.onreadystatechange = function() {
       mJson = JSON.parse(mRequest.responseText);
       iterateJSON();
    }
-};
 mRequest.open("GET", mUrl, true);
 mRequest.send();
+}
 }
 
 function rotate()
@@ -103,12 +103,12 @@ function rotate()
    $("#nextPhoto").click(function(){
         swapPhoto();
     });
-	$( "#prevPhoto" ).click(function() {
+	$("#prevPhoto").click(function() {
 		mCurrentIndex -= 2;
 		swapPhoto();
 	});
-   
-	$( "#nextPhoto" ).click(function() {
+
+	$("#nextPhoto").click(function() {
 		swapPhoto();
 	});
 
