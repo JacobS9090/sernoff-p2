@@ -72,7 +72,7 @@ var mJson;
 
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
-var mUrl = 'images.json';
+var mUrl;
 
 function fetchJSON() {
 mRequest.onreadystatechange = function() {
@@ -99,15 +99,6 @@ function rotate()
   $( ".details" ).slideToggle( "slow", "linear" );
 }
 
-//Click functions for nav buttons
-   $( "#prevPhoto" ).click(function() {
-		mCurrentIndex-=2;
-		swapPhoto();
-	});
-
-	$( "#nextPhoto" ).click(function() {
-		swapPhoto();
-	});
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
 //@param A GalleryImage object. Use this method for an event handler for loading a gallery Image object (optional).
@@ -125,9 +116,16 @@ $(document).ready( function() {
      of: "#nav"
    });
    
-   $("#nextPhoto").click(function(){
-        swapPhoto();
-    });
+//Click functions for nav buttons
+   
+   $( "#prevPhoto" ).click(function() {
+	mCurrentIndex-=2;
+	swapPhoto();
+	});
+
+	$( "#nextPhoto" ).click(function() {
+	swapPhoto();
+	});
    
     const urlParams = new URLSearchParams(window.location.search);
 
@@ -166,4 +164,3 @@ var description;
 var date;
 var img;
 }
-// Associates details in JSON file with description parts//
