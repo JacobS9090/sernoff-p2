@@ -103,11 +103,6 @@ function rotate()
    $("#nextPhoto").onclick(function(){
         swapPhoto();
     });
-	$("#prevPhoto").onclick(function() {
-		mCurrentIndex -= 2;
-		swapPhoto();
-	});
-
 	$("#nextPhoto").onclick(function() {
 		swapPhoto();
 	});
