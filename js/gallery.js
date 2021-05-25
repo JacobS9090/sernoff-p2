@@ -101,7 +101,7 @@ function rotate()
 
 //Click functions for nav buttons
    $( "#prevPhoto" ).click(function() {
-		mCurrentIndex=-2;
+		mCurrentIndex-=2;
 		swapPhoto();
 	});
 
