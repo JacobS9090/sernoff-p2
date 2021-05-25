@@ -85,6 +85,29 @@ mRequest.open("GET", mUrl, true);
 mRequest.send();
 }
 
+function rotate()
+{
+  if($(".moreIndicator").hasClass("rot90"))
+  {
+    $( ".moreIndicator" ).removeClass("rot90");
+    $(".moreIndicator").addClass("rot270");
+  }
+  else {
+    $( ".moreIndicator" ).removeClass("rot270");
+    $(".moreIndicator").addClass("rot90");
+  }
+  $( ".details" ).slideToggle( "slow", "linear" );
+}
+
+//Click functions for nav buttons
+   $( "#prevPhoto" ).click(function() {
+		mCurrentIndex-=2;
+		swapPhoto();
+	});
+
+	$( "#nextPhoto" ).click(function() {
+		swapPhoto();
+	});
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
 //@param A GalleryImage object. Use this method for an event handler for loading a gallery Image object (optional).
@@ -96,14 +119,28 @@ return function(e) {
 }
 
 $(document).ready( function() {
-  $("#nextPhoto").position({
-    my: "right bottom",
-    at: "right bottom",
-    of: "#nav"
-  });
-fetchJSON();
+  $( "#nextPhoto" ).position({
+     my: "right bottom",
+     at: "right bottom",
+     of: "#nav"
+   });
+   
+   $("#nextPhoto").click(function(){
+        swapPhoto();
+    });
+   
+    const urlParams = new URLSearchParams(window.location.search);
 
+     for (const [key, value] of urlParams) {
+         console.log(`${key}:${value}`);
+         mUrl = value;
+     }
+      if(mUrl == undefined)
+      {
+         mUrl = 'images.json';
+      }
 
+      fetchJSON();
 });
 
 window.addEventListener('load', function() {
@@ -130,60 +167,3 @@ var date;
 var img;
 }
 // Associates details in JSON file with description parts//
-
-
-function rotate(){
-    if ($(".moreIndicator").hasClass("rot90")) {
-        $(".moreIndicator").removeClass("rot90").addClass("rot270");
-    } else {
-        $(".moreIndicator").removeClass("rot270").addClass("rot90");
-    }
-}
-
-
-$("#nextPhoto").position({
-  my: "right bottom",
-  at: "right bottom",
-  of: "#nav"
-});
-function rotate(){
-    if ($(".moreIndicator").hasClass("rot90")) {
-        $(".moreIndicator").removeClass("rot90").addClass("rot270");
-    } else {
-        $(".moreIndicator").removeClass("rot270").addClass("rot90");
-    }
-}
-$("#nextPhoto").position({
-  my: "right bottom",
-  at: "right bottom",
-  of: "#nav"
-});
-// Rotates bottom button if picture is too big//
-$(document).ready(function(){
-    $("#nextPhoto").click(function(){
-        swapPhoto();
-    });
-});
-// Swaps out the next photo when right image clicked//
-$(document).ready(function(){
-    $("#prevPhoto").click(function(){
-        mCurrentIndex -= 2;
-        swapPhoto();
-    });
-});
-// Swaps out the next photo when right image clicked//
-$(document).ready(function(){
-  if(mURL==undefined){
-    mURL=images.json
-  }
-fetchJSON();
-});
-// Associate JSON file with web images//
-$(document).ready( function() {
-    const json = new URLSearchParams(location.search);
-    for (const value of json.values()) {
-        console.log(value);
-        mUrl = extra.json;
-        }
-    request();
-});
