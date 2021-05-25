@@ -100,15 +100,15 @@ function rotate()
 }
 
 //Click functions for nav buttons
-   $("#nextPhoto").click(function(){
+   $("#next-Photo").click(function(){
         swapPhoto();
     });
-	$( "#prevPhoto" ).click(function() {
+	$( "#prev-Photo" ).click(function() {
 		mCurrentIndex -= 2;
 		swapPhoto();
 	});
    
-	$( "#nextPhoto" ).click(function() {
+	$( "#next-Photo" ).click(function() {
 		swapPhoto();
 	});
 
@@ -122,7 +122,7 @@ return function(e) {
 }
 
 $(document).ready( function() {
-  $( "#nextPhoto" ).position({
+  $( "#next-Photo" ).position({
      my: "right bottom",
      at: "right bottom",
      of: "#nav"
